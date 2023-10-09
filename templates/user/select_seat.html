@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .seat {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .seat.selected {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select Seats for Showtime</h2>
+    <div class="seating-area">
+        {% for seat in seats %}
+            <div class="seat {% if seat.is_booked %}selected{% endif %}">
+                {{ seat.seat_number }}
+            </div>
+        {% endfor %}
+    </div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input type="hidden" name="showtime" value="{{ showtime.id }}">
+        <input type="hidden" name="selected_seats" id="selected-seats">
+        <button type="submit" class="btn btn-primary">Book Selected Seats</button>
+    </form>
+    <script>
+        const selectedSeats = new Set();
+
+        document.querySelectorAll('.seat').forEach(seat => {
+            seat.addEventListener('click', () => {
+                seat.classList.toggle('selected');
+                if (seat.classList.contains('selected')) {
+                    selectedSeats.add(seat.textContent);
+                } else {
+                    selectedSeats.delete(seat.textContent);
+                }
+                document.querySelector('#selected-seats').value = Array.from(selectedSeats).join(',');
+            });
+        });
+    </script>
+</body>
+</html>

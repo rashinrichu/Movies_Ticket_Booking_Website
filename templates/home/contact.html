@@ -1,0 +1,219 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<style>
+    h2{
+        color:white;
+        font-size: 90px;
+        font-weight: bold;
+
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    }
+    
+    main {
+        flex: 1;
+    }
+    
+    footer {
+        background-color: #B87333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: auto; /* Push the footer to the bottom of the page */
+        width: 100%;
+    }
+             /* Styles for mobile */
+             @media (max-width: 767px) {
+                /* Adjust the flex layout to stack the content vertically */
+                .footer-content {
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                }
+              
+                /* Reduce the font size for mobile view */
+                .footer-content p {
+                  font-size: 10px;
+                }
+              
+                /* Override the flex-wrap property to ensure the right side content is visible */
+                .right-content {
+                  flex-wrap: nowrap;
+                  margin-top: 10px;
+                }
+              }
+    .embed-responsive {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .embed-responsive::before {
+        content: "";
+        display: block;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .embed-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    @media (max-width: 767px) {
+        .embed-responsive {
+            max-width: calc(100% - 20px); /* Adjust the width reduction as needed */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+    }
+    @media (max-width: 767px) {
+        .mobile-font-size {
+            font-size: 60px; /* Adjust the font size for mobile view */
+        }
+    }
+
+</style>
+<h4 class="text-center mobile-font-size" id="text" style="color:white;font-size:90px;font-weight:bold;">Contact Us</h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="background-color: lightcoral;">
+    <br>
+    <br>
+    <br>
+<div class="container"style="font-size:27px;color:white;">
+    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​
+    
+    This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
+</div>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="big-box container" style="border:3px solid #B87333;width:700px;">
+    <div class="container" id="container">
+        <div class="registration-form">
+            <form method="post">
+                {% csrf_token %}
+             <div class="text-center" style="font-size: 40px;">Contact Us</div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="date_of_birth">Date of Birth</label>
+                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="gender">Gender</label>
+                        <select class="form-control" id="gender" name="gender" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="O">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn- text-center" style="background-color:lightcoral;color:white;">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="0.3s">
+    <div class="embed-responsive" style="width: 1860px;"> <!-- Adjust the width value as needed -->
+        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31236.41105903224!2d75.3492632380429!3d11.86664360478509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba422b9b2aca753%3A0x380605a11ce24f6c!2sKannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1682787522471!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<footer class="footer" style="background-color:#B87333;"> 
+    <div class="footer-content d-flex justify-content-between align-items-center flex-wrap">
+<div class="left-content text-center">
+  <p class="clinic-name" style="font-size: 25px; color: white; margin-bottom: 0;">
+    Email</p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:28px;">rashin@gmail.com</p>
+  <br>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;">Address</p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Kannur City  </p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">In Kerala
+    <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">India CA 94158
+
+  </div>
+  <div class="center-content text-center">
+    <p class="center-paragraph" style="font-size: 25px; color: white; margin-bottom: 0;">About Us anything</p>
+    <p class="center-paragraph" style="font-size: 25px; color: white; margin-bottom: 0;">                      
+          <button class="btn btn-" style="background-color:lightcoral;color:white;font-size:30px;font-weight:bold;">Book Tickets</button>
+        </p>
+
+  </div>
+<div class="right-content text-center">
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;">Tel</p>
+  <p class="tel" style="font-size: 30px; color: white; margin-bottom: 0;">123-456-7890</p>
+  <br>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;">Follow Us</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Instagram</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Facebook</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Twitter</p>
+</div>
+</div>
+</footer>
+
+{% endblock %}

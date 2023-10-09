@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theater Website</title>
+    <!-- Your website content goes here -->
+
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    }
+    
+    main {
+        flex: 1;
+    }
+    
+    footer {
+        background-color: #B87333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: auto; /* Push the footer to the bottom of the page */
+        width: 100%;
+    }
+    
+               
+    .navbar {
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-image: url('https://getwallpapers.com/wallpaper/full/f/1/b/375459.jpg');
+
+
+       
+    }
+    
+    .navbar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%; /* Adjust the left position to center the underline */
+        width: 85%; /* Adjust the width of the underline */
+        height: 2px;
+        background-color:white;
+
+        transform: translateX(-50%); /* Center the underline horizontally */
+    }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+    }
+    
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    .nav-item {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 5px 10px;
+        color: white;
+    
+    }
+    
+    
+    
+    html {
+        background-color: lightcoral;
+    }
+    
+    .nav-logo {
+        font-size: 40px;
+        font-family: fantasy;
+        color: white;
+    
+    }
+    #nav{
+        color: white;
+    
+    }
+    #nav:hover{
+        color: lightcoral;
+    
+    }
+      .logo-animation{
+        color: white;
+    
+      }         
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .social-icons a i {
+        color: white;
+        font-size: 24px;
+        margin-right: 10px; 
+        padding-left: 20px;
+    
+    }
+    
+    .login a {
+        font-size: 28px;
+        color: white;
+        text-decoration: none;
+        padding-right: 20px;
+    }
+    
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 24px;
+        }
+        .nav-item {
+            font-size: 20px;
+        }
+        .social-icons,
+        .login {
+            padding: 0 10px; /* Add some padding to the icons and login link */
+        }
+        .social-icons a i,
+        .login a {
+            font-size: 20px;
+        }
+    }
+    body {
+        background-image: url('https://getwallpapers.com/wallpaper/full/f/1/b/375459.jpg');
+        background-size: cover;
+        background-size: 100% 96%; /* Set the size of the background image */
+                background-repeat: no-repeat;
+                
+             }
+    
+            
+            
+    </style>
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <div class="logo-animation">    <i class="fas fa-film"></i></div>
+        </a>
+        <span class="nav-logo" href="#">Movie Magic</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" >
+                    <a class="nav-link" id="nav" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav" href="/about/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav" href="">Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  id="nav" href="/contact/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="header">
+    <div class="social-icons">
+      
+        <div class="register">
+            <a href="#" id="registerLink" style="color:white;font-size:30px;"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
+        </div>
+    </div>
+    <div class="login">
+        <a href="#" id="loginLink"><i class="fas fa-user"></i>&nbsp;&nbsp;Login</a>
+    </div>
+</div>
+<style>
+
+
+    h2 {
+        color: white;
+        font-size: 90px;
+        font-weight: bold;
+    }
+
+    #about {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #p {
+        color: white;
+    }
+
+    .box {
+        width: 40%; /* Use 50% to make the boxes take equal space */
+        height: 500px;
+        border: 2px solid black;
+        box-sizing: border-box;
+        float: left; /* Use float property to position boxes side by side */
+        margin-left: 120px;
+        border:6px solid #B87333;
+    }
+h3{
+    font-size: 50px;
+    color: white;
+    padding-top: 70px;
+}
+ li{
+    padding-top: 40px;
+    font-size: 20px;
+    color: white;
+
+ }
+ .card{
+    padding-top: 70px;
+    font-size: 20px;
+    border: none;
+ }
+ @media (max-width: 576px) {
+    .box {
+        width: 98%;
+        float: none;
+        margin-left: 0;
+        font-size: 10px; /* Set the font size for mobile screens */
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .container {
+        justify-content: center;
+    }
+h3 {
+    font-size:10px;
+}
+li{
+    font-size: 10px;
+}
+h2{
+    font-size: 20px;
+}
+    .box + .box {
+        margin-top: 20px;
+    }
+}
+@media (max-width: 576px) {
+    #registerLink {
+        font-size: 20px; /* Adjust the font size as needed for mobile view */
+    }
+}
+footer {
+    background-color: #B87333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Push the footer to the bottom of the page */
+    width: 100%;
+}
+         /* Styles for mobile */
+         @media (max-width: 767px) {
+            /* Adjust the flex layout to stack the content vertically */
+            .footer-content {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+          
+            /* Reduce the font size for mobile view */
+            .footer-content p {
+              font-size: 10px;
+            }
+          
+            /* Override the flex-wrap property to ensure the right side content is visible */
+            .right-content {
+              flex-wrap: nowrap;
+              margin-top: 10px;
+            }
+          }
+</style>
+
+<h2 class="text-center">About Us</h2>
+<br>
+<br>
+<br>
+<div style="background-color: lightcoral;" id="about">
+    <div class="container" style="font-size:27px;" id="p">
+        I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​
+
+        This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
+    </div>
+</div>
+<div class="div" style="background-color: lightcoral;">
+<div class="">
+    <div class="box">
+        <!-- Content for Box 1 -->
+        <h3 class="text-center">
+            Bringing Friends, Families and Loved Ones Together</h3>
+            <li class="text-center">This is the content of Box 2.</li>
+            <li class="text-center">This is the content of Box 2.</li>
+            <li class="text-center">This is the content of Box 2.</li>
+    
+    
+    </div>
+    <div class="box">
+     
+        
+        <h3 class="text-center">House Rules</h3>
+        <li class="text-center">This is the content of Box 2.</li>
+        <li class="text-center">This is the content of Box 2.</li>
+        <li class="text-center">This is the content of Box 2.</li>
+
+        <li class="text-center">This is the content of Box 2.</li>
+
+       
+    </div>
+</div>
+</div>
+<br>
+<br>
+<footer class="footer" style="background-color:#B87333;"> 
+    <div class="footer-content d-flex justify-content-between align-items-center flex-wrap">
+<div class="left-content text-center">
+  <p class="clinic-name" style="font-size: 25px; color: white; margin-bottom: 0;">
+    Email</p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:28px;">rashin@gmail.com</p>
+  <br>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;">Address</p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Kannur City  </p>
+  <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">In Kerala
+    <p class="address" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">India CA 94158
+
+  </div>
+  <div class="center-content text-center">
+    <p class="center-paragraph" style="font-size: 25px; color: white; margin-bottom: 0;">About Us anything</p>
+    <p class="center-paragraph" style="font-size: 25px; color: white; margin-bottom: 0;">                       
+         <button class="btn btn-" style="background-color:lightcoral;color:white;font-size:30px;font-weight:bold;">Book Tickets</button>
+        </p>
+
+  </div>
+<div class="right-content text-center">
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;">Tel</p>
+  <p class="tel" style="font-size: 30px; color: white; margin-bottom: 0;">123-456-7890</p>
+  <br>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;">Follow Us</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Instagram</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Facebook</p>
+  <p class="tel" style="font-size: 25px; color: white; margin-bottom: 0;font-size:30px;">Twitter</p>
+</div>
+</div>
+</footer>
+
+
+
